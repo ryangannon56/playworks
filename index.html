@@ -207,13 +207,14 @@
                   </div>
                   <div class="modal-body">
                     <label >Full Name:</label>
-                    <input type="text" name="name" class="form-control" placeholder="Enter your full name">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter your full name">
                     <label >Comment or Concern:</label>
                    <textarea name="comments" id="comments" class="form-control" placeholder="Enter your Comments or concerns" cols="30" rows="10"></textarea>
                   </div>
+                  <label id="commentstatus" class="text-success"></label>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Submit</button>
+                    <button type="button" id="commentsubmit" class="btn btn-primary">Submit</button>
                   </div>
 
 
@@ -264,7 +265,15 @@ $("#Rlastname").text($("#lastname").val());
 $("#Rbalance").text("$1,256.25");
 
 
+});
 
+
+$("#commentsubmit").click(function(){
+
+
+  $("#comments").prop('disabled', true);
+  $("#name").prop('disabled', true);
+  $("#commentstatus").text("Your comment have been submitted. Thank you");
 
 });
 
