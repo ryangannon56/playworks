@@ -103,15 +103,20 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
+
                     <div class="modal-body">
-                      <label >Last Name:</label>
-                      <input type="text" name="lastName" class="form-control" placeholder="Enter your last name">
-                      <label >Date of Birth:</label>
-                      <input type="date" name="dateofbirth" class="form-control" >
+                      <label class="lastname">Last Name:</label><br>
+                      <input type="text" name="lastName" id="lastname" class="form-control lastname" placeholder="Enter your last name">
+                      <strong id="Rlastname"></strong><br>
+                      <label class="dateofbirth">Date of Birth:</label><br>
+                      <input type="date" name="dateofbirth" id="dateofbirth" class="form-control dateofbirth" >
+                      <strong id="Rdateofbirth"></strong><br>
+                      Balance owed: <br>
+                      <strong class="text-danger" id="Rbalance"></strong>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Search</button>
+                      <button type="button" class="btn btn-primary" id="search">Search</button>
                     </div>
 
 
@@ -243,8 +248,30 @@
   <script src="lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="lib/isotope/isotope.pkgd.min.js"></script>
   <script src="lib/lightbox/js/lightbox.min.js"></script>
-  <!-- Contact Form JavaScript File -->
   
+  
+<script>
+
+$("#search").click(function(){
+
+
+$("#lastname").hide();
+
+$("#dateofbirth").hide();
+
+$("#Rdateofbirth").text($("#dateofbirth").val());
+$("#Rlastname").text($("#lastname").val());
+$("#Rbalance").text("$1,256.25");
+
+
+
+
+});
+
+
+</script>
+
+
 
   <!-- Template Main Javascript File -->
   <script src="js/playworks.js"></script>
