@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PlayWorks</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">PlayWorks</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="check_balance.html">Finance  <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="schedule.html">Schedule <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+         
+        </div>
+      </nav>
+
+
+      <div class="jumbotron">
+        <h1 class="display-3">PlayWorks - Request Medical Documents</h1>
+        <p class="lead">You can make a request to get your medical request</p>
+        <hr class="my-2">
+        <p>PlayWorks combines a professional staff, hands-on curriculum and a custom designed facility to enhance your child's development through fun and play. Our experienced staff will prepare your child for kindergarten and life in an educational environment that fosters cognitive, motor, social, and emotional growth. It's all offered in a state-of-the-art 5,000 square-foot facility with a 2,500 square-foot indoor play area. Inclement weather is never an issue at PlayWorks.</p>
+        <p class="lead">
+               <!-- Large modal -->
+               <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">Make a Medical Record Request</button>
+
+               <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                 <div class="modal-dialog modal-lg">
+                   <div class="modal-content">
+                     
+                     <div class="modal-header">
+                       <h5 class="modal-title" id="exampleModalLongTitle">Medical Record Request</h5>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                       </button>
+                     </div>
+ 
+                     <div class="modal-body">
+
+                        <div class="alert alert-success" role="alert">
+                            Your request has been submitted!
+                          </div>
+
+                       <label class="lastname">Full Name:</label><br>
+                       <input type="text" name="lastName" id="lastname" class="form-control lastname" placeholder="Enter your last name">
+                       <strong id="Rlastname"></strong><br>
+                       <label class="dateofbirth">Date of Birth:</label><br>
+                       <input type="date" name="dateofbirth" id="dateofbirth" class="form-control dateofbirth" >
+                       <strong id="Rdateofbirth"></strong><br>
+                       <label class="reasontext">Reason:</label><br>
+                       <textarea name="reasontext" id="reasontext" class="form-control reasontext" placeholder="Enter summery of your reason for the document request" cols="30" rows="10"></textarea>
+                       <strong id="Rreasontext"></strong><br>
+                  
+                     </div>
+
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                       <button type="button" class="btn btn-primary" id="search">Submit</button>
+                     </div>
+ 
+ 
+                   </div>
+                 </div>
+               </div>
+        </p>
+      </div>
+
+
+      <footer>
+
+        <div class="container-fluid">
+          <div class="row">
+    
+            <div class="col-lg-12 col-md-6 footer-info">
+              <h3>PlayWorks</h3>
+              <p>Playworks aims for 3.5 million children in 7,000 schools to experience safe, healthy play every day by 2020. Click on your state to explore what Playworks is doing near you.</p>
+              
+    
+    
+    
+    
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".feedbackmodel">Feedback or Comments</button>
+    
+              <div class="modal fade feedbackmodel text-dark" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Feedback or Comments</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <label >Full Name:</label>
+                      <input type="text" name="name" id="name" class="form-control" placeholder="Enter your full name">
+                      <label >Comment or Concern:</label>
+                     <textarea name="comments" id="comments" class="form-control" placeholder="Enter your Comments or concerns" cols="30" rows="10"></textarea>
+                    </div>
+                    <label id="commentstatus" class="text-success"></label>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" id="commentsubmit" class="btn btn-primary">Submit</button>
+                    </div>
+    
+    
+                  </div>
+                </div>
+              </div>
+    
+    
+    
+    
+    
+            </div>
+          </div>
+        </div>
+    
+      </footer>
+    
+    <script src="JS/jquery.min.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
+    
+    <script>
+    
+    $(".alert").hide();  
+      $("#search").click(function(){
+      
+        
+        
+      
+      $("#lastname").hide();
+      
+      $("#dateofbirth").hide();
+
+      $("#reasontext").hide();
+      
+      $("#Rdateofbirth").text($("#dateofbirth").val());
+      $("#Rlastname").text($("#lastname").val());
+      $("#Rreasontext").text($("#reasontext").val());
+      $(".alert").show(); 
+      $("#search").hide(); 
+      
+      });
+      
+      
+      $("#commentsubmit").click(function(){
+      
+      
+        $("#comments").prop('disabled', true);
+        $("#name").prop('disabled', true);
+        $("#commentstatus").text("Your comment have been submitted. Thank you");
+      
+      });
+      
+      
+      </script>
+      
+    </body>
+    </html>
